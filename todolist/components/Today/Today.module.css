@@ -1,4 +1,42 @@
 .today {
-    margin-top: 60px;
-  }
-  
+  margin: 120px;
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+}
+
+.cardHeader h1 {
+  font-size: 30px;
+  margin-right: 5px;
+}
+
+.cardHeader p {
+  margin-top: 10px;
+  color: #605e5e;
+}
+
+.card .currentDate {
+  margin-left: auto;
+}
+
+.addtask {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  color: red;
+  margin-bottom: 14px;
+}
+.addtask:hover{
+  cursor: pointer;
+}
+
+.addtask .icon{
+  font-size: 20px;
+
+}
+
+.addtask h3 {
+  margin-left: 5px;
+}
