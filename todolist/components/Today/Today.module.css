@@ -24,6 +24,15 @@
   color: #605e5e;
 }
 
+.cardHeader .complete {
+  margin-left: auto;
+  font-size: 20px;
+}
+ 
+.cardHeader .complete:hover {
+  cursor: pointer;
+}
+
 .card .currentDate {
   margin-left: auto;
 }

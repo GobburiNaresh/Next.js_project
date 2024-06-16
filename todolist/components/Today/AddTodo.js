@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import Card from '../UI/Card/Card';
 import classes from './AddTodo.module.css';
 
-
 const AddTodo = (props) => {
   const [taskName, setTaskName] = useState('');
 

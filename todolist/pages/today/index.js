@@ -4,16 +4,11 @@ import TodayComponent from '../../components/Today/Today';
 import { MongoClient } from 'mongodb';
 
 const TodayPage = (props) => {
+  console.log(props);
   const router = useRouter();
-  const initialTodos = props.initialTodos.map(todo => ({
-    ...todo,
-    status: 'Incomplete'  // Ensure each todo has a status
-  }));
-
-  console.log(initialTodos);
+  const { initialTodos } = props;
 
   async function addTodoHandler(todoData) {
-    console.log(todoData);
     const response = await fetch('/api/addTodo', {
       method: 'POST',
       body: JSON.stringify(todoData),
@@ -22,8 +17,7 @@ const TodayPage = (props) => {
       },
     });
     const data = await response.json();
-
-    console.log(data);
+    
     router.push('/today');
   }
 
@@ -42,17 +36,18 @@ export async function getStaticProps() {
 
   const todoListCollection = db.collection("TodoList");
 
-  const todos = await todoListCollection.find().toArray();
-  const initialTodos = todos.map(todoItem => ({
-    description: todoItem.description,
-    id: todoItem._id.toString(),
-    status: 'Incomplete'  // Ensure the status field is added
-  }));
+  
+  const todoList = await todoListCollection.find().toArray();
   client.close();
 
   return {
     props: {
-      initialTodos
+      initialTodos: todoList.map(todoItem =>({
+        id: todoItem._id.toString(),
+        description: todoItem.todos.description,
+        status: todoItem.todos.status
+
+      }))
     },
     revalidate: 10,
   };
