@@ -1,9 +1,9 @@
 import "@/styles/globals.css";
-import HomePage from '../components/HomePage/HomePage';
+import Header from '../components/Header/Header';
 import {Fragment} from 'react';
  
 export default function App({ Component, pageProps }) {
   return <Fragment>
-    <Component {...pageProps} /><HomePage/>
+    <Component {...pageProps} /><Header/>
   </Fragment>;
 }

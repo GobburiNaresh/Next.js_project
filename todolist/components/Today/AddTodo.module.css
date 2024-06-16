@@ -4,6 +4,21 @@
   align-items: flex-start;
 }
 
+.addTodo label {
+  color: rgb(126, 129, 132);
+  margin-bottom: 10px;
+}
+
+.addTodo input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: none;
+  border-radius: 4px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  outline: none;
+}
+
 .buttonContainer {
   display: flex;
   justify-content: flex-end;
@@ -11,12 +26,17 @@
   margin-top: 20px;
 }
 
-
 .buttonContainer button {
   margin-left: 10px;
   padding: 10px;
+  cursor: pointer;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  border-radius: 4px;
+  transition: background-color 0.3s;
 }
 
 .buttonContainer button:hover {
-  cursor: pointer;
+  background-color: #0056b3;
 }

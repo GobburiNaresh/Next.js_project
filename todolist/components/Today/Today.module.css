@@ -1,5 +1,12 @@
 .today {
-  margin: 120px;
+  margin-top: 120px;
+  text-align: center;
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+  padding: 50px;
+   
+  
 }
 
 .cardHeader {
@@ -22,11 +29,10 @@
 }
 
 .addtask {
-  margin-top: 20px;
+  margin: 20px;
   display: flex;
   align-items: center;
   color: red;
-  margin-bottom: 14px;
 }
 .addtask:hover{
   cursor: pointer;
